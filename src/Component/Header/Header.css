@@ -1,0 +1,17 @@
+.header{
+    height: 80px;
+    background-color: #1C2B35;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.ankor a{
+    text-decoration: none;
+    color: white;
+    margin-left: 30px;
+}
+.ankor a:hover{
+    color: rgb(235, 134, 46);
+}
