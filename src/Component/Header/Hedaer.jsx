@@ -5,8 +5,8 @@ const Hedaer = () => {
     <nav className="header">
       <img src={logo} alt="" />
       <div className="ankor">
-        <a href="/shop">Shop</a>
-        <a href="/order">Orders</a>
+        <a href="/">Shop</a>
+        <a href="/orders">Orders</a>
         <a href="/inventory">Inventory</a>
         <a href="/login">Login</a>
       </div>
