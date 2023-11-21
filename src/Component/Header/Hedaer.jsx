@@ -17,7 +17,7 @@ const Hedaer = () => {
   return (
     <nav className="header">
       <img src={logo} alt="" />
-      <div>
+      <div className="link">
         <Link to="/">Shop</Link>
         <Link to="/orders">Orders</Link>
         <Link to="/inventory">Inventory</Link>

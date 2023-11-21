@@ -1,11 +1,11 @@
 .header{
-    height: 80px;
+    /* height: 80px; */
     background-color: #1C2B35;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 100px;
-    padding-right: 100px;
+
+    padding: 10px 100px;
 }
 nav.header  a{
     text-decoration: none;
@@ -14,4 +14,9 @@ nav.header  a{
 }
 nav.header a:hover{
     color: rgb(235, 134, 46);
+}
+.link{
+display: flex;
+gap: 8px;
+
 }

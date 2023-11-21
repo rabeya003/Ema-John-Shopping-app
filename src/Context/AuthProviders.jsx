@@ -10,9 +10,11 @@ import app from "../Firebase/Firebase.config";
 
 export const AuthProvider = createContext(null);
 const auth = getAuth(app);
+
 const AuthProviders = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log("state", currentUser);
