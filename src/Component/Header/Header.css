@@ -7,11 +7,11 @@
     padding-left: 100px;
     padding-right: 100px;
 }
-.ankor a{
+nav.header  a{
     text-decoration: none;
     color: white;
     margin-left: 30px;
 }
-.ankor a:hover{
+nav.header a:hover{
     color: rgb(235, 134, 46);
 }

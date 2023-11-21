@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Toaster } from "react-hot-toast";
 
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -12,6 +13,7 @@ import LogIn from "./Component/LogIn/LogIn";
 import CartProductLoader from "./Loaders/CartProductsLoader";
 import CheckOut from "./Component/CheckOut/CheckOut";
 import SignUp from "./Component/SignUp/SignUp";
+import AuthProviders from "./Context/AuthProviders";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,6 +50,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProviders>
+      <RouterProvider router={router} />
+      <Toaster />
+    </AuthProviders>
   </React.StrictMode>
 );
