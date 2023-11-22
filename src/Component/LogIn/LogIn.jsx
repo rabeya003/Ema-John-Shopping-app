@@ -8,7 +8,6 @@ const LogIn = () => {
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
-  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,9 +19,11 @@ const LogIn = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        e.target.reset();
+
         toast.success("User succesfully Loged");
-        navigate(from, { replace: true });
+
+        navigate(location?.state ? location?.state : "/");
+        e.target.reset();
       })
       .catch((error) => {
         toast.error(error.massage);
