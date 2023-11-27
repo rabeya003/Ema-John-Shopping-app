@@ -1,13 +1,17 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthProvider } from "../../Context/AuthProviders";
 import toast from "react-hot-toast";
 const LogIn = () => {
+  const [typePass, setPassword] = useState(true);
   const { signIn } = useContext(AuthProvider);
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
+  const handletype = () => {
+    setPassword(!typePass);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,9 +23,7 @@ const LogIn = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-
         toast.success("User succesfully Loged");
-
         navigate(location?.state ? location?.state : "/");
         e.target.reset();
       })
@@ -39,7 +41,14 @@ const LogIn = () => {
         </div>
         <div className="form-control">
           <label htmlFor="password">Password</label>
-          <input type="password" name="password" required />
+          <input
+            type={typePass ? "password" : "text"}
+            name="password"
+            required
+          />
+          <p>
+            <small onClick={handletype}>Show password</small>
+          </p>
         </div>
         <input className="btn-submit" value="Login" type="submit" />
         <p>

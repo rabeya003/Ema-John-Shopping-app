@@ -1,5 +1,5 @@
 import "./Header.css";
-import logo from "../../images/Logo.svg";
+import logo from "../../images/logo-removebg-preview.png";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthProvider } from "../../Context/AuthProviders";
@@ -16,9 +16,11 @@ const Hedaer = () => {
   };
   return (
     <nav className="header">
-      <img src={logo} alt="" />
+      <Link>
+        <img src={logo} alt="" />
+      </Link>
       <div className="link">
-        <Link to="/">Shop</Link>
+        <Link to="/shop">Shop</Link>
         <Link to="/orders">Orders</Link>
         <Link to="/inventory">Inventory</Link>
         <Link to="/login">Login</Link>
